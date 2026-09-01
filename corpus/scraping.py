@@ -1,19 +1,14 @@
 """Descarga desde iNaturalist, solo licencias abiertas."""
 
-import csv
 import hashlib
 import json
 import re
 import time
 from collections import Counter
-from pathlib import Path
 
 import requests
 
-BASE = Path(__file__).resolve().parent
-CORPUS = BASE / "Insectos"
-METADATA = BASE / "metadata.csv"
-LISTA_ESPECIES = BASE / "species_list.json"
+from . import IMAGENES as CORPUS, LISTA_ESPECIES, METADATA, escribirCsv, leerCsv
 
 API = "https://api.inaturalist.org/v1"
 LICENCIAS = "cc0,cc-by,cc-by-nc,cc-by-sa,cc-by-nc-sa"
@@ -85,7 +80,7 @@ def scrapear(porEspecie=POR_ESPECIE):
     sesion.headers["User-Agent"] = "butterfly-dataset/1.0"
 
     # Acumula sobre lo ya descargado; escribir por tandas borró la procedencia antes.
-    filas = list(csv.DictReader(METADATA.open())) if METADATA.exists() else []
+    filas = leerCsv(METADATA)
     conocidas = {fila["photo_id"] for fila in filas}
     print(f"{len(filas)} fotos ya registradas en {METADATA.name}")
 
@@ -130,10 +125,7 @@ def scrapear(porEspecie=POR_ESPECIE):
         print(f"{nombre} ({taxon['name']}): +{nuevas}")
 
     print(f"Escribiendo {METADATA.name}")
-    with METADATA.open("w", newline="", encoding="utf-8") as f:
-        escritor = csv.DictWriter(f, fieldnames=COLUMNAS)
-        escritor.writeheader()
-        escritor.writerows(filas)
+    escribirCsv(METADATA, filas, COLUMNAS)
     print(f"{len(filas)} fotos en {METADATA.name}")
 
     conteo = Counter(fila["especie"] for fila in filas)

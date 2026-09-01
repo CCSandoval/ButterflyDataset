@@ -1,2 +1,5 @@
 Insectos*/
+Dataset/
+cache/
+pesos/
 __pycache__

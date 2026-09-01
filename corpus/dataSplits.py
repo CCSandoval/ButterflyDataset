@@ -2,11 +2,8 @@
 
 import json
 import random
-from pathlib import Path
 
-BASE = Path(__file__).resolve().parent
-CORPUS = BASE / "Insectos"
-SPLITS_DIR = BASE / "splits"
+from . import IMAGENES as CORPUS, SPLITS_DIR
 
 EXTENSIONES = {".jpg", ".jpeg", ".png", ".webp"}
 SPLITS = ("train", "test", "validate")
@@ -28,12 +25,16 @@ def inventariar(corpus=CORPUS):
     }
 
 
-def repartir(especies, semilla, corpus=CORPUS):
+def repartir(especies, semilla, corpus=CORPUS, archivosPorEspecie=None):
     """Combina la semilla con el nombre de la especie, de modo que agregar
-    especies no altera el reparto de las que ya estaban."""
+    especies no altera el reparto de las que ya estaban.
+
+    Con archivosPorEspecie reparte una lista en memoria (las imágenes que
+    sobreviven al preprocesamiento) en vez de leer el disco."""
     reparto = {}
     for especie in sorted(especies):
-        archivos = imagenesDe(especie, corpus)
+        archivos = (sorted(archivosPorEspecie[especie]) if archivosPorEspecie is not None
+                    else imagenesDe(especie, corpus))
         mezclados = random.Random(f"{semilla}:{especie}").sample(archivos, len(archivos))
         corte1 = round(len(archivos) * PROPORCIONES[0])
         corte2 = corte1 + round(len(archivos) * PROPORCIONES[1])
@@ -51,10 +52,10 @@ def contar(reparto):
     return conteos
 
 
-def publicar(reparto, semilla, destino=SPLITS_DIR):
+def publicar(reparto, semilla, nombre=None):
     """Escribe el reparto: es lo que consume el repositorio de modelado."""
-    destino.mkdir(exist_ok=True)
-    ruta = destino / f"semilla{semilla}.json"
+    SPLITS_DIR.mkdir(exist_ok=True)
+    ruta = SPLITS_DIR / (nombre or f"semilla{semilla}.json")
     ruta.write_text(json.dumps({
         "semilla": semilla,
         "num_clases": len(reparto),

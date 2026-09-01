@@ -9,14 +9,38 @@ artefactos. La dependencia va en un solo sentido.
 
 ## Artefactos
 
-| Ruta                     | Qué es                                                       | Versionado |
-| ------------------------ | ------------------------------------------------------------ | ---------- |
-| `Insectos/<especie>/`    | imágenes descargadas                                         | no         |
-| `metadata.csv`           | una fila por foto: licencia, atribución, observación, sha256 | sí         |
-| `splits/semilla<N>.json` | qué archivo fue a train, test o validate                     | sí         |
+| Ruta                               | Qué es                                                        | Versionado |
+| ---------------------------------- | ------------------------------------------------------------- | ---------- |
+| `Insectos/<especie>/`              | imágenes descargadas                                          | no         |
+| `Dataset/<split>/<especie>/`       | recortes cuadrados 448×448, ya filtrados y repartidos         | no         |
+| `metadata.csv`                     | una fila por foto: licencia, atribución, observación, sha256   | sí         |
+| `auditoria.csv`                    | una fila por foto: recorte, métricas, veredicto y motivo       | sí         |
+| `splits/semilla<N>.json`           | qué archivo fue a train, test o validate                       | sí         |
+| `splits/procesado_semilla<N>.json` | lo mismo, sobre las imágenes que sobrevivieron al filtro       | sí         |
 
 Las imágenes no van a git: son obras de terceros y pesan GB. Lo que se versiona es
-la receta —`metadata.csv`— que permite reconstruirlas y verificar los bytes.
+la receta —`metadata.csv` y `auditoria.csv`— que permite reconstruirlas, verificar los
+bytes y explicar por qué se descartó cada foto.
+
+## Preprocesamiento
+
+`02_preprocesamiento.ipynb` convierte el corpus crudo en el dataset de entrenamiento:
+
+1. **Recorte.** YOLO-World localiza la mariposa —COCO no tiene clase de mariposa, así que
+   un YOLO estándar no sirve— y la caja se convierte en un cuadrado con margen. Ante un
+   borde el cuadrado se desplaza en vez de rellenarse: un borde negro sería una textura
+   sintética que la red aprendería como atajo.
+2. **Calidad.** Varianza del Laplaciano para el desenfoque, medida sobre el recorte ya
+   normalizado a 384×384 para que el umbral no dependa del tamaño; mediana del canal V y
+   fracción de píxeles quemados o negros para la exposición; lado mínimo del recorte para
+   no ampliar detalle inexistente.
+3. **Duplicados.** pHash y dHash sobre el recorte, comparados solo dentro de cada especie.
+   El `observation_id` sirve de conjunto de validación: el valle entre las distancias
+   dentro de una observación y las de observaciones distintas es lo que fija el umbral. De
+   cada grupo se conserva la foto más nítida.
+
+Cada foto sale con un veredicto y un motivo excluyente, y el notebook publica la tabla de
+conteos por motivo, las rejillas de ejemplos de cada descarte y la fuga antes y después.
 
 ## Solo licencias abiertas
 
@@ -50,21 +74,20 @@ Por eso conviene descargar por identificador de taxón verificado, no por nombre
 
 ## Uso
 
+Todo el código Python vive en el paquete `corpus/`; los notebooks lo orquestan.
+
 ```bash
-python scraping.py                 # descarga
+python -m corpus.scraping               # descarga
 jupyter lab 01_corpus_y_dataset.ipynb   # inventario y publicación de la partición
+jupyter lab 02_preprocesamiento.ipynb   # recorte, calidad, deduplicación y dataset en disco
 ```
+
+La detección necesita `ultralytics`, que el resto del repositorio no usa.
 
 ## Pendiente
 
 - Reconciliación taxonómica: sinónimos → identificadores estables de iNat y GBIF
-- Calidad: desenfoque (varianza del Laplaciano), exposición, resolución
-- Deduplicación de casi-duplicados de la misma observación
-- Recorte del espécimen
-
-Sobre la deduplicación: varias fotos de una observación son el mismo individuo con
-segundos de diferencia. Al partir por imagen caen en entrenamiento y prueba a la
-vez — medido, el **22,7 %** de las imágenes de prueba tenía una hermana en
-entrenamiento. Se corrige eliminando los casi-duplicados, no agrupando por
-observación: así las fotos genuinamente distintas, dorsal y ventral, sobreviven.
-# ButterflyDataset
+- Calibrar los umbrales de calidad y de distancia contra el corpus completo: los que hay en
+  `corpus/calidad.py` y `corpus/duplicados.py` son un punto de partida, y el notebook 02
+  está montado para ajustarlos a la vista de las rejillas de frontera
+- Decidir qué hacer con las fotos sin detección, que hoy se descartan
