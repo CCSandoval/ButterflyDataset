@@ -5,6 +5,7 @@ import hashlib
 import json
 import re
 import time
+from collections import Counter
 from pathlib import Path
 
 import requests
@@ -16,7 +17,7 @@ LISTA_ESPECIES = BASE / "species_list.json"
 
 API = "https://api.inaturalist.org/v1"
 LICENCIAS = "cc0,cc-by,cc-by-nc,cc-by-sa,cc-by-nc-sa"
-POR_ESPECIE = 300
+POR_ESPECIE = 200
 PAUSA = 0.25
 
 COLUMNAS = ["especie", "taxon_id", "observation_id", "photo_id",
@@ -48,12 +49,14 @@ def buscarTaxon(sesion, nombre):
 def fotosDe(sesion, taxonId, maximo):
     vistas, pagina = set(), 1
     while len(vistas) < maximo:
+        print(f"    página {pagina} (fotos vistas: {len(vistas)}/{maximo})")
         observaciones = pedir(sesion, "observations", {
             "taxon_id": taxonId, "quality_grade": "research", "photos": "true",
             "photo_license": LICENCIAS, "order_by": "id", "order": "asc",
             "per_page": 200, "page": pagina,
         })["results"]
         if not observaciones:
+            print("    sin más observaciones")
             return
         for observacion in observaciones:
             for foto in observacion["photos"]:
@@ -74,26 +77,34 @@ def descargar(sesion, url, destino):
 
 
 def scrapear(porEspecie=POR_ESPECIE):
+    print(f"Leyendo especies de {LISTA_ESPECIES.name}")
     especies = json.loads(LISTA_ESPECIES.read_text())["species"]
+    print(f"{len(especies)} especies en la lista, máximo {porEspecie} fotos por especie")
+
     sesion = requests.Session()
     sesion.headers["User-Agent"] = "butterfly-dataset/1.0"
 
     # Acumula sobre lo ya descargado; escribir por tandas borró la procedencia antes.
     filas = list(csv.DictReader(METADATA.open())) if METADATA.exists() else []
     conocidas = {fila["photo_id"] for fila in filas}
+    print(f"{len(filas)} fotos ya registradas en {METADATA.name}")
 
-    for entrada in especies:
+    for numero, entrada in enumerate(especies, start=1):
         if "sp." in entrada["name"]:
+            print(f"[{numero}/{len(especies)}] {entrada['name']}: omitida (sp.)")
             continue
         nombre = nombreCorto(entrada["name"])
+        print(f"[{numero}/{len(especies)}] {nombre}: buscando taxón")
         taxon = buscarTaxon(sesion, nombre)
         time.sleep(PAUSA)
         if taxon is None:
             print(f"{nombre}: sin taxón")
             continue
+        print(f"  taxón {taxon['id']} ({taxon['name']})")
 
         carpeta = CORPUS / carpetaDe(nombre)
         carpeta.mkdir(parents=True, exist_ok=True)
+        print(f"  carpeta {carpeta.name} lista")
         nuevas = 0
 
         for observacionId, foto in fotosDe(sesion, taxon["id"], porEspecie):
@@ -101,6 +112,7 @@ def scrapear(porEspecie=POR_ESPECIE):
                 continue
             url = foto["url"].replace("square", "large")
             archivo = carpeta / f"{carpetaDe(nombre)}_{foto['id']}.jpg"
+            print(f"    descargando foto #{nuevas + 1}")
             filas.append({
                 "especie": carpetaDe(nombre),
                 "taxon_id": taxon["id"],
@@ -117,11 +129,17 @@ def scrapear(porEspecie=POR_ESPECIE):
 
         print(f"{nombre} ({taxon['name']}): +{nuevas}")
 
+    print(f"Escribiendo {METADATA.name}")
     with METADATA.open("w", newline="", encoding="utf-8") as f:
         escritor = csv.DictWriter(f, fieldnames=COLUMNAS)
         escritor.writeheader()
         escritor.writerows(filas)
     print(f"{len(filas)} fotos en {METADATA.name}")
+
+    conteo = Counter(fila["especie"] for fila in filas)
+    print(f"\nResumen: {len(conteo)} especies")
+    for especie, total in sorted(conteo.items()):
+        print(f"  {especie}: {total} imágenes")
 
 
 if __name__ == "__main__":
