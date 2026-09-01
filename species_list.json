@@ -1,0 +1,365 @@
+{
+  "count": 90,
+  "species": [
+    {
+      "name": "Pythonides jovianus (Stoll, 1782)",
+      "scraped": false
+    },
+    {
+      "name": "Quadrus sp.",
+      "scraped": false
+    },
+    {
+      "name": "Panoquina ocola (W. H. Edwards, 1863)",
+      "scraped": false
+    },
+    {
+      "name": "Remella sp.",
+      "scraped": false
+    },
+    {
+      "name": "Vettius fantasos (Cramer, 1780)",
+      "scraped": false
+    },
+    {
+      "name": "Pyrgus adepta Plötz, 1884",
+      "scraped": false
+    },
+    {
+      "name": "Pyrgus orcus (Stoll, 1780)",
+      "scraped": false
+    },
+    {
+      "name": "Urbanus elmina Evans, 1952",
+      "scraped": false
+    },
+    {
+      "name": "Urbanus procne (Plötz, 1881)",
+      "scraped": false
+    },
+    {
+      "name": "Urbanus dorantes (Stoll, 1790)",
+      "scraped": false
+    },
+    {
+      "name": "Urbanus simplicius (Stoll, 1790)",
+      "scraped": false
+    },
+    {
+      "name": "Urbanus teleus (Hübner, 1821)",
+      "scraped": false
+    },
+    {
+      "name": "Autochton itylus Hübner, 1823",
+      "scraped": false
+    },
+    {
+      "name": "Parides eurimedes arriphus (Boisduval, 1836)",
+      "scraped": false
+    },
+    {
+      "name": "Parides erithalion (Boisduval, 1836)",
+      "scraped": false
+    },
+    {
+      "name": "Eurema arbela gratiosa (E. Doubleday, 1847)",
+      "scraped": false
+    },
+    {
+      "name": "Phoebis sennae marcellina (Cramer, 1777)",
+      "scraped": false
+    },
+    {
+      "name": "Eurema albula marginella (C. Felder & R. Felder, 1861)",
+      "scraped": false
+    },
+    {
+      "name": "Eurema xantochlora xantochlora (Kollar, 1850)",
+      "scraped": false
+    },
+    {
+      "name": "Pyrisitia limbia (C. Felder & R. Felder, 1861)",
+      "scraped": false
+    },
+    {
+      "name": "Pyrisitia proterpia (Fabricius, 1775)",
+      "scraped": false
+    },
+    {
+      "name": "Dismorphia amphione beroe (Lucas, 1852)",
+      "scraped": false
+    },
+    {
+      "name": "Dismorphia thermesia thermesia (Godart, 1819)",
+      "scraped": false
+    },
+    {
+      "name": "Dismorphia theucharila (E. Doubleday, 1848)",
+      "scraped": false
+    },
+    {
+      "name": "Ascia monuste monuste (Linnaeus, 1764)",
+      "scraped": false
+    },
+    {
+      "name": "Ectima thecla (Fabricius, 1796)",
+      "scraped": false
+    },
+    {
+      "name": "Hamadryas februa ferentina (Godart, [1824])",
+      "scraped": false
+    },
+    {
+      "name": "Nica flavilla canthara (E. Doubleday, 1849)",
+      "scraped": false
+    },
+    {
+      "name": "Hamadryas amphinome fumosa (Fruhstorfer, 1915)",
+      "scraped": false
+    },
+    {
+      "name": "Hamadryas feronia farinulenta (Fruhstorfer, 1916)",
+      "scraped": false
+    },
+    {
+      "name": "Consul fabius cecrops (E. Doubleday, [1849])",
+      "scraped": false
+    },
+    {
+      "name": "Hypna clytemnestra (Cramer, 1777)",
+      "scraped": false
+    },
+    {
+      "name": "Memphis pseudiphis (Staundinger, 1887)",
+      "scraped": false
+    },
+    {
+      "name": "Siderone galanthis (Cramer, 1775)",
+      "scraped": false
+    },
+    {
+      "name": "Archaeoprepona demophon muson (Fruhstorfer, 1905)",
+      "scraped": false
+    },
+    {
+      "name": "Archaeoprepona amphimachus (Fabricius, 1775)",
+      "scraped": false
+    },
+    {
+      "name": "Hypoleria ocalea gephira (Hewitson, [1856])",
+      "scraped": false
+    },
+    {
+      "name": "Pteronymia aletta (Hewitson, [1855])",
+      "scraped": false
+    },
+    {
+      "name": "Mechanitis menapis Hewitson, [1856]",
+      "scraped": false
+    },
+    {
+      "name": "Mechanitis lysimnia macrinus Hewitson, 1861",
+      "scraped": false
+    },
+    {
+      "name": "Pteronymia latilla (Hewitson, [1855])",
+      "scraped": false
+    },
+    {
+      "name": "Athesis clearista colombiensis Kaye, 1918",
+      "scraped": false
+    },
+    {
+      "name": "Ceratinia tutia (Hewitson, 1852)",
+      "scraped": false
+    },
+    {
+      "name": "Dircenna dero (Hübner, 1823)",
+      "scraped": false
+    },
+    {
+      "name": "Dircenna jemina (Geyer, 1837)",
+      "scraped": false
+    },
+    {
+      "name": "Actinote anteas (E. Doubleday, [1847])",
+      "scraped": false
+    },
+    {
+      "name": "Eueides vibilia (Godart, 1819)",
+      "scraped": false
+    },
+    {
+      "name": "Heliconius eleuchia eleuchia (Hewitson, [1854])",
+      "scraped": false
+    },
+    {
+      "name": "Dryas iulia iulia (Fabricius, 1775)",
+      "scraped": false
+    },
+    {
+      "name": "Heliconius erato (Linnaeus, 1758)",
+      "scraped": false
+    },
+    {
+      "name": "Heliconius cydno hermogenes (Hewitson, [1858])",
+      "scraped": false
+    },
+    {
+      "name": "Heliconius melpomene (Linnaeus, 1758)",
+      "scraped": false
+    },
+    {
+      "name": "Dione moneta Hübner, [1825]",
+      "scraped": false
+    },
+    {
+      "name": "Heliconius doris (Linnaeus, 1771)",
+      "scraped": false
+    },
+    {
+      "name": "Adelpha alala (Hewitson, 1847)",
+      "scraped": false
+    },
+    {
+      "name": "Historis odius odius (Fabricius, 1775)",
+      "scraped": false
+    },
+    {
+      "name": "Eresia polina Hewitson, 1852",
+      "scraped": false
+    },
+    {
+      "name": "Tegosa anieta anieta (Hewitson, 1864)",
+      "scraped": false
+    },
+    {
+      "name": "Tigridia acesta columbina (Neustetter, 1929)",
+      "scraped": false
+    },
+    {
+      "name": "Colobura dirce dirce (Linnaeus, 1758)",
+      "scraped": false
+    },
+    {
+      "name": "Smyrna blomfildia (Fabricius, 1781)",
+      "scraped": false
+    },
+    {
+      "name": "Tigridia acesta (Linnaeus, 1758)",
+      "scraped": false
+    },
+    {
+      "name": "Anartia amathea (Linnaeus, 1758)",
+      "scraped": false
+    },
+    {
+      "name": "Anartia jatrophae (Linnaeus, 1763)",
+      "scraped": false
+    },
+    {
+      "name": "Siproeta stelenes (Linnaeus, 1758)",
+      "scraped": false
+    },
+    {
+      "name": "Siproeta epaphus (Latreille, [1813])",
+      "scraped": false
+    },
+    {
+      "name": "Opsiphanes cassina C. Felder & R. Felder, 1867",
+      "scraped": false
+    },
+    {
+      "name": "Caligo oedipus oedipus Stichel, 1903",
+      "scraped": false
+    },
+    {
+      "name": "Eryphanis lycomedon (C. Felder & R. Felder, 1862)",
+      "scraped": false
+    },
+    {
+      "name": "Pierella luna luna (Fabricius, 1793)",
+      "scraped": false
+    },
+    {
+      "name": "Morpho helenor peleides Kollar, 1850",
+      "scraped": false
+    },
+    {
+      "name": "Pareuptychia ocirrhoe (Fabricius, 1776)",
+      "scraped": false
+    },
+    {
+      "name": "Pseudodebis puritana (Weeks, 1902)",
+      "scraped": false
+    },
+    {
+      "name": "Cissia confusa (Staudinger, 1887)",
+      "scraped": false
+    },
+    {
+      "name": "Hermeuptychia hermes (Fabricius, 1775)",
+      "scraped": false
+    },
+    {
+      "name": "Taygetina kerea (Butler, 1869)",
+      "scraped": false
+    },
+    {
+      "name": "Taygetis laches Fabricius, 1793",
+      "scraped": false
+    },
+    {
+      "name": "Cissia sp.",
+      "scraped": false
+    },
+    {
+      "name": "Magneuptychia alcinoe (C. Felder & R. Felder, 1867)",
+      "scraped": false
+    },
+    {
+      "name": "Magneuptychia libye (Linnaeus, 1767)",
+      "scraped": false
+    },
+    {
+      "name": "Megeuptychia antonoe (Cramer, 1775)",
+      "scraped": false
+    },
+    {
+      "name": "Cissia pompilia (C. Felder & R. Felder, 1867)",
+      "scraped": false
+    },
+    {
+      "name": "Taygetis sylvia H. Bates, 1867",
+      "scraped": false
+    },
+    {
+      "name": "Taygetis virgilia (Cramer, 1776)",
+      "scraped": false
+    },
+    {
+      "name": "Arawacus togarna (Hewitson, 1867)",
+      "scraped": false
+    },
+    {
+      "name": "Zizula cyna (W. H. Edwards, 1881)",
+      "scraped": false
+    },
+    {
+      "name": "Hades noctula Westwood, 1851",
+      "scraped": false
+    },
+    {
+      "name": "Eurybia dardus annulata Stichel, 1910",
+      "scraped": false
+    },
+    {
+      "name": "Detritivora sp.",
+      "scraped": false
+    },
+    {
+      "name": "Euselasia mys (Herrich-Schäffer, [1853])",
+      "scraped": false
+    }
+  ]
+}
