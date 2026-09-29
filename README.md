@@ -4,7 +4,7 @@ Construcción del corpus de mariposas del Mariposario del Tolima: descarga desde
 iNaturalist, inventario y partición reproducible.
 
 Este repositorio **produce el corpus; no entrena nada**. El repositorio de modelado
-([InsectsMobileNet](https://github.com/CCSandoval/InsectsMobileNet)) consume sus
+([ButterflyModeling](https://github.com/CCSandoval/ButterflyModeling)) consume sus
 artefactos. La dependencia va en un solo sentido.
 
 ## Artefactos

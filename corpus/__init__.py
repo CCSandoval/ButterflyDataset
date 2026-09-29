@@ -1,18 +1,17 @@
-"""Rutas del repositorio y lectura y escritura de los CSV que lo componen."""
+"""Rutas del repositorio y lectura y escritura de sus CSV."""
 
 import csv
 from pathlib import Path
 
 BASE = Path(__file__).resolve().parent.parent
 IMAGENES = BASE / "Insectos"
-DATASET = BASE / "Dataset"
 CACHE = BASE / "cache"
 PESOS = BASE / "pesos"
-SPLITS_DIR = BASE / "splits"
+VERSIONES_DIR = BASE / "versiones"
+PROCESADO_DIR = BASE / "procesado"
 FIGURAS = BASE / "figuras"
 
 METADATA = BASE / "metadata.csv"
-AUDITORIA = BASE / "auditoria.csv"
 LISTA_ESPECIES = BASE / "species_list.json"
 
 
