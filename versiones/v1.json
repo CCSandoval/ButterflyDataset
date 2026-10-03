@@ -20,10 +20,10 @@
  },
  "num_clases": 79,
  "conteos": {
-  "train": 7218,
-  "test": 2062,
+  "train": 7214,
+  "test": 2061,
   "validate": 1038,
-  "total": 10318
+  "total": 10313
  },
  "reparto": {
   "actinote_anteas": {
@@ -4372,7 +4372,6 @@
     "hamadryas_amphinome_5945035.jpg",
     "hamadryas_amphinome_11668637.jpg",
     "hamadryas_amphinome_11645030.jpg",
-    "hamadryas_amphinome_47873.jpg",
     "hamadryas_amphinome_9153603.jpg",
     "hamadryas_amphinome_10083204.jpg",
     "hamadryas_amphinome_11257896.jpg",
@@ -4382,7 +4381,6 @@
     "hamadryas_amphinome_11842864.jpg",
     "hamadryas_amphinome_2276075.jpg",
     "hamadryas_amphinome_10291650.jpg",
-    "hamadryas_amphinome_47865.jpg",
     "hamadryas_amphinome_8958797.jpg",
     "hamadryas_amphinome_835706.jpg",
     "hamadryas_amphinome_9788886.jpg",
@@ -4437,12 +4435,10 @@
     "hamadryas_amphinome_8223546.jpg",
     "hamadryas_amphinome_6407365.jpg",
     "hamadryas_amphinome_10825230.jpg",
-    "hamadryas_amphinome_47869.jpg",
     "hamadryas_amphinome_5945177.jpg",
     "hamadryas_amphinome_12033564.jpg",
     "hamadryas_amphinome_11293009.jpg",
     "hamadryas_amphinome_2441175.jpg",
-    "hamadryas_amphinome_47866.jpg",
     "hamadryas_amphinome_10830812.jpg",
     "hamadryas_amphinome_1908312.jpg"
    ],
@@ -4462,7 +4458,6 @@
     "hamadryas_amphinome_4027348.jpg",
     "hamadryas_amphinome_4357931.jpg",
     "hamadryas_amphinome_6469867.jpg",
-    "hamadryas_amphinome_47867.jpg",
     "hamadryas_amphinome_10382450.jpg",
     "hamadryas_amphinome_8238621.jpg",
     "hamadryas_amphinome_11910931.jpg",
