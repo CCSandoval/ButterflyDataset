@@ -13,6 +13,7 @@ FIGURAS = BASE / "figuras"
 
 METADATA = BASE / "metadata.csv"
 LISTA_ESPECIES = BASE / "species_list.json"
+LISTA_TOLIMA = BASE / "species_list_tolima.json"
 
 
 def leerCsv(ruta):
