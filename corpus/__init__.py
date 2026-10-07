@@ -7,13 +7,13 @@ BASE = Path(__file__).resolve().parent.parent
 IMAGENES = BASE / "Insectos"
 CACHE = BASE / "cache"
 PESOS = BASE / "pesos"
-VERSIONES_DIR = BASE / "versiones"
-PROCESADO_DIR = BASE / "procesado"
+PROCESADO = BASE / "procesado"
+MANIFIESTO = BASE / "manifiesto.json"
 FIGURAS = BASE / "figuras"
 
 METADATA = BASE / "metadata.csv"
+AUDITORIA = BASE / "auditoria.csv"
 LISTA_ESPECIES = BASE / "species_list.json"
-LISTA_TOLIMA = BASE / "species_list_tolima.json"
 
 
 def leerCsv(ruta):
