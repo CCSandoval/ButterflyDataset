@@ -9,7 +9,6 @@ CACHE = BASE / "cache"
 PESOS = BASE / "pesos"
 PROCESADO = BASE / "procesado"
 MANIFIESTO = BASE / "manifiesto.json"
-FIGURAS = BASE / "figuras"
 
 METADATA = BASE / "metadata.csv"
 AUDITORIA = BASE / "auditoria.csv"
