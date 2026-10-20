@@ -4,6 +4,8 @@ Construcción del corpus de mariposas del Tolima: 100 especies con presencia reg
 
 Este repositorio **produce el corpus; no entrena nada**. El repositorio de modelado ([ButterflyModeling](https://github.com/CCSandoval/ButterflyModeling)) consume sus artefactos.
 
+El corpus ya construido está depositado en Zenodo con DOI [10.5281/zenodo.23502753](https://doi.org/10.5281/zenodo.23502753): los 25 306 recortes, el manifiesto con la partición, la procedencia por foto y la auditoría. Bajarlo de ahí evita volver a descargar de iNaturalist. Ese DOI es el de esta versión, que es el que cita el artículo.
+
 ## Artefactos
 
 | Ruta                        | Qué es                                                        | Rastreado en Git |
@@ -55,7 +57,3 @@ Los tres primeros arrancan por defecto en modo **describir o reconstruir lo publ
 `metadata.csv` trae la URL y el `sha256` de cada foto, y `auditoria.csv` la caja con que se recortó. La auditoría importa porque la detección **no** es reproducible (con otra versión de los pesos de YOLO-World hay diferencias en los resultados), así que recortar con las cajas guardadas es lo que hace que el corpus salga igual, y de paso ahorra tiempo en detección.
 
 La detección solo hace falta para construir un corpus nuevo, y necesita `ultralytics`, que el resto del repositorio no usa.
-
-## Pendiente
-
-- [ ] Depositar los recortes en Zenodo con DOI.
