@@ -164,8 +164,8 @@
   "wikipedia": "https://en.wikipedia.org/wiki/Siproeta epaphus",
   "inaturalist": "https://www.inaturalist.org/taxa/126316",
   "imagen": "fichas/siproeta_epaphus.jpg",
-  "atribucion": "(c) João Menezes, some rights reserved (CC BY-NC-SA)",
-  "licencia": "cc-by-nc-sa"
+  "atribucion": "(c) Alberto González-Gallina, some rights reserved (CC BY-NC)",
+  "licencia": "cc-by-nc"
  },
  "heliconius_eleuchia": {
   "cientifico": "Heliconius eleuchia",
@@ -206,7 +206,7 @@
   "wikipedia": "https://en.wikipedia.org/wiki/Dione moneta",
   "inaturalist": "https://www.inaturalist.org/taxa/130348",
   "imagen": "fichas/dione_moneta.jpg",
-  "atribucion": "(c) Paulina Arias Caballero, some rights reserved (CC BY-NC)",
+  "atribucion": "(c) Pedro Lucero T, some rights reserved (CC BY-NC)",
   "licencia": "cc-by-nc"
  },
  "euptychoides_laccine": {
@@ -262,7 +262,7 @@
   "wikipedia": "https://en.wikipedia.org/wiki/Heraclides anchisiades",
   "inaturalist": "https://www.inaturalist.org/taxa/258354",
   "imagen": "fichas/heraclides_anchisiades.jpg",
-  "atribucion": "(c) Giovanny Stiven Castro, some rights reserved (CC BY-NC)",
+  "atribucion": "(c) James Steamer, some rights reserved (CC BY-NC)",
   "licencia": "cc-by-nc"
  },
  "danaus_plexippus": {
@@ -388,7 +388,7 @@
   "wikipedia": "https://en.wikipedia.org/wiki/Callicore",
   "inaturalist": "https://www.inaturalist.org/taxa/257973",
   "imagen": "fichas/callicore_pitheas.jpg",
-  "atribucion": "(c) Miguel Diaz Anaya, some rights reserved (CC BY-NC)",
+  "atribucion": "(c) gsmall, some rights reserved (CC BY-NC)",
   "licencia": "cc-by-nc"
  },
  "adelpha_alala": {
@@ -724,8 +724,8 @@
   "wikipedia": "https://en.wikipedia.org/wiki/Ascia monuste",
   "inaturalist": "https://www.inaturalist.org/taxa/51536",
   "imagen": "fichas/ascia_monuste.jpg",
-  "atribucion": "(c) krancmm, some rights reserved (CC BY-NC)",
-  "licencia": "cc-by-nc"
+  "atribucion": "(c) Francisco Farriols Sarabia, some rights reserved (CC BY)",
+  "licencia": "cc-by"
  },
  "cissia_pompilia": {
   "cientifico": "Cissia pompilia",
@@ -1396,7 +1396,7 @@
   "wikipedia": "https://en.wikipedia.org/wiki/Battus ingenuus",
   "inaturalist": "https://www.inaturalist.org/taxa/258353",
   "imagen": "fichas/battus_ingenuus.jpg",
-  "atribucion": "(c) adriantourismcr, some rights reserved (CC BY-NC)",
+  "atribucion": "(c) Eric van den Berghe, some rights reserved (CC BY-NC)",
   "licencia": "cc-by-nc"
  }
 }
